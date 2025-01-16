@@ -27,9 +27,9 @@ export default function Cadastro(): ReactElement {
         setFormData({ ...formData, [key]: value });
     };
 
-    const handleRegister = async (e: React.FormEvent): Promise<void> => {
+    const handleRegister = async (event: React.FormEvent): Promise<void> => {
         try {
-            e.preventDefault();
+            event.preventDefault();
             setErrorMessage("")
             setIsLoading(true);
 
@@ -50,7 +50,6 @@ export default function Cadastro(): ReactElement {
             router.push("/login")
 
         } catch (err: any) {
-            console.log(err)
             if (err.response) {
                 setErrorMessage(err.response.data.message)
             }
